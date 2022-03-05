@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/style.css">
+    <script src="https://code.highcharts.com/stock/highstock.js"></script>
+    <script src="https://code.highcharts.com/stock/modules/data.js"></script>
+    <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/stock/modules/export-data.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.13/moment-timezone-with-data-2012-2022.min.js"></script>
+    <title>Home</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="searchform">
+            <p class="formtitle">Stock search</p>
+            <form action="" id="form" onsubmit="handleSubmit(event)">
+                <input type="image"  onsubmit="handleSubmit(event)" src="/static/img/search-solid (1).svg" alt="" class="submiticon">
+                <input  autocomplete="off" required value="" type="text" id="search"
+                    placeholder="Enter stock ticker symbol">
+                <img onclick="handleClear()" src="/static/img/times-solid.svg" alt="" class="closeicon">
+            </form>
+        </div>
+        <div id="main">
+            <ul id="nav">
+                <li class="navitem active" id="start_nav" onclick="handleNavChange(event,'company')">
+                    Company
+                </li>
+                <li class="navitem" onclick="handleNavChange(event,'summary')">
+                    Stock summary
+                </li>
+                <li class="navitem" onclick="handleNavChange(event,'chart')">
+                    Charts
+                </li>
+                <li class="navitem " onclick="handleNavChange(event,'news')">
+                    Latest news
+                </li>
+            </ul>
+            <div id="content">
+                
+            </div>
+
+        </div>
+        <p id="error">
+            Error: No record has been found,please enter a valid symbol
+        </p>
+    </div>
+
+    <script src="/static/js/main.js"></script>
+</body>
+
+</html>
